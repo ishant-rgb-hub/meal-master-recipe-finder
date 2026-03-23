@@ -178,7 +178,7 @@ The application will be fully responsive:
 
    * Open `index.html` in your browser
 
----
+
 
 ## 📅 Development Timeline
 
