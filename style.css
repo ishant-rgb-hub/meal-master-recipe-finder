@@ -1,0 +1,6 @@
+#meals{
+    display: grid;
+    grid-template-columns: repeat(autofit,minmax(200px,fr));
+    gap: 20px;
+
+}
