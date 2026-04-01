@@ -18,5 +18,5 @@ const params = new URLSearchParams(window.location.search);
                 `;
             })
             .catch(() => {
-                container.innerHTML = "<p>Error loading recipe</p>";
+                container.innerHTML = "<p>no recipe found</p>";
             });
