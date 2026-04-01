@@ -1,0 +1,74 @@
+#recipe {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#recipe .meal-card {
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+#recipe img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#recipe h2 {
+    margin-bottom: 10px;
+}
+
+#recipe p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+
+}
+
+
+.back-btn {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    will-change: transform, box-shadow;
+    outline: none;
+}
+.back-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 24px rgba(69,160,73,0.22);
+    filter: brightness(1.03);
+    background: orange;
+}
+.back-btn:active {
+    transform: translateY(0) scale(0.99);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    filter: brightness(0.98);
+}
+.back-btn:focus-visible {
+    box-shadow: 0 0 0 4px rgba(76,175,80,0.18);
+}
+
+
+@media (max-width: 600px) {
+    #recipe .meal-card {
+        padding: 15px;
+    }
+
+    #recipe h2 {
+        font-size: 20px;
+    }
+}
