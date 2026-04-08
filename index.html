@@ -3,15 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meal Master</title>
-    <link rel="stylesheet" href="style.css".css">
+    <title>Meal Master - Recipe Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>🍽️ Meal Master</h1>
-     <input type="text" id="input" placeholder="enter ingredient"/>
-     <button id="searchButton">Search</button>
-     <div id="meals"></div>
+    <nav class="nav-bar">
+       
+        <a href="login.html" class="login-btn">
+            <i class="fas fa-user"></i> Login / Signup
+        </a>
+        <span id="user-status" class="user-info"></span>
+    </nav>
+    
+    <header>
+        
+        <h1>🍽️ Meal Master</h1>
+        <p>Discover delicious recipes with ingredients you have!</p>
+    </header>
+    
+    <div class="search-area">
+        <div class="search-wrap">
+            <div class="search-box" style="display:flex; align-items:center; gap:12px; width:100%; max-width:720px; margin:0 auto;">
+                <input type="text" id="input" placeholder="Enter ingredient (e.g., chicken, rice)..." style="flex:1; padding:12px 16px; border-radius:30px; border:1px solid rgba(0,0,0,0.08);">
+                <button id="searchButton" style="padding:10px 22px; border-radius:24px; margin-left:8px;">Search</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="meals"></div>
     
     <script src="script.js"></script>
+    <script>
+
+        const user = localStorage.getItem('user');
+        const status = document.getElementById('user-status');
+        if (user && user !== 'guest') {
+            status.textContent = `Welcome, ${user}! `;
+            status.className = 'user-status logged-in';
+        }
+    </script>
 </body>
 </html>
