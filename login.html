@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup - Meal Master</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="page">
+        <div class="title-section">
+            <h1>🍽️ Meal Master</h1>
+            <p>Welcome back! Let's find your perfect recipe.</p>
+        </div>
+        
+        <div class="login-box">
+            <div class="tab-switch">
+                <button class="tab-btn active" data-form="login">Login</button>
+                <button class="tab-btn" data-form="signup">Sign Up</button>
+            </div>
+            
+ 
+            <form id="loginForm" class="login-form active">
+                <div class="form-input">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-input">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <label class="remember-check">
+                    <input type="checkbox"> Remember me
+                </label>
+                <button type="submit" class="action-btn">
+                    Login
+                </button>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </form>
+            
+            <!-- Signup Form -->
+            <form id="signupForm" class="login-form">
+                <div class="form-input">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="form-input">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-input">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-input">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="action-btn">
+                    Sign Up
+                </button>
+            </form>
+        </div>
+        
+        <div class="guest-section">
+            <a href="index.html">Continue as Guest →</a>
+        </div>
+    </div>
+
+   
+</body>
+</html>
