@@ -10,10 +10,14 @@
 </head>
 <body>
     <nav class="nav-bar">
-       
-        <a href="login.html" class="login-btn">
-            <i class="fas fa-user"></i> Login / Signup
-        </a>
+        <div style="display: flex; gap: 16px; align-items: center;">
+            <a href="login.html" class="login-btn">
+                <i class="fas fa-user"></i> Login / Signup
+            </a>
+            <button class="theme-toggle" title="Toggle Theme">
+                🌙
+            </button>
+        </div>
         <span id="user-status" class="user-info"></span>
     </nav>
     
@@ -25,9 +29,14 @@
     
     <div class="search-area">
         <div class="search-wrap">
-            <div class="search-box" style="display:flex; align-items:center; gap:12px; width:100%; max-width:720px; margin:0 auto;">
-                <input type="text" id="input" placeholder="Enter ingredient (e.g., chicken, rice)..." style="flex:1; padding:12px 16px; border-radius:30px; border:1px solid rgba(0,0,0,0.08);">
-                <button id="searchButton" style="padding:10px 22px; border-radius:24px; margin-left:8px;">Search</button>
+            <div class="search-box">
+                <input type="text" id="input" placeholder="Enter ingredient (e.g., chicken, rice)...">
+                <select id="dietFilter">
+                    <option value="both">Both Veg & Non-Veg</option>
+                    <option value="veg">Vegetarian Only</option>
+                    <option value="nonveg">Non-Veg Only</option>
+                </select>
+                <button id="searchButton">🔍 Search</button>
             </div>
         </div>
     </div>

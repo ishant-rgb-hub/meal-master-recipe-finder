@@ -3,15 +3,22 @@ const mealContainer = document.getElementById("meals");
 
 searchButton.addEventListener("click", () => {
 	const ingredient = document.getElementById("input").value;
-	fetchMeals(ingredient);
+	const diet = document.getElementById("dietFilter").value;
+	fetchMeals(ingredient, diet);
 });
 
-function fetchMeals(ingredient) {
+function fetchMeals(ingredient, diet) {
 	mealContainer.innerHTML = "<p>....... loading.....</p>";
 	fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${encodeURIComponent(ingredient)}`)
 		.then(res => res.json())
 		.then(data => {
-			displayMeals(data.meals);
+			let filteredMeals = data.meals || [];
+			if (diet === 'veg') {
+				filteredMeals = filteredMeals.filter(meal => meal.strCategory === 'Vegetarian');
+			} else if (diet === 'nonveg') {
+				filteredMeals = filteredMeals.filter(meal => meal.strCategory !== 'Vegetarian');
+			}
+			displayMeals(filteredMeals);
 		})
 		.catch(() => {
 			mealContainer.innerHTML = "<p>...Error fetching data</p>";
@@ -37,3 +44,18 @@ function displayMeals(meals) {
 function viewRecipe(id) {
 	window.location.href = `recipe.html?id=${id}`;
 }
+
+// Theme Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    
+    const toggleBtn = document.querySelector('.theme-toggle');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+});
